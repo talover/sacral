@@ -140,6 +140,8 @@ var changeTab = function(linkContainer, linkTab, tabContainer) {
 		massonryInit('#container-massonry', '.item');
 
 		event.preventDefault();
+
+		setTimeout(function(){height_cont()},200);
 	});
 }
 
