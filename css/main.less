@@ -2924,9 +2924,11 @@ textarea {
 }
 
 .feedback {
-    padding: 73px 198px 0 89px;
+    padding: 73px 0 0 89px;
+    max-width: 820px;
+    .box-sizing(border-box);
     
-    .after-title {
+    .text-block {
         margin: 36px 0 0 0;
         color: #ff6b15;
         font-size: 14pt;
@@ -2938,19 +2940,20 @@ textarea {
         margin-top: 76px;
         
         .row {
-            text-align: right;
             margin-bottom: 36px;
 
             label {
                 color: #5E5E5E;
                 font-size: 14pt;
-                line-height: 45px;
-                margin-right: 16px;      
+                line-height: 45px;   
+                width: 180px;
+                float: left;  
+                text-align: right;
             }
+
             .input-container {
-                width: 70%;
-                display: inline-block;
-                vertical-align: top;
+                width: auto;
+                margin: 0 0 0 200px;
 
                 input[type=text],
                 textarea {
@@ -2958,9 +2961,9 @@ textarea {
                     line-height: 42px;
                     .border-radius(21px);
                     border: 1px solid #EAEAEA;
-                    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-                    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                    -moz-box-shadow:    0 2px 5px 0px rgba(0, 0, 0, 0.05);
+                    -webkit-box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.05);
+                    box-shadow:         0 2px 5px 0px rgba(0, 0, 0, 0.05);
                     padding-left: 15px;
                     color: #565656;
                     font-family:'ProximaNova-Light';
@@ -2968,7 +2971,7 @@ textarea {
                     opacity: 1;
                     filter:alpha(opacity=100);
                     outline: 0;
-                    .transition(0.2s,all);
+                    .transition(0.1s,all);
                     opacity: 0.5;
                     filter:alpha(opacity=50);
 
@@ -2991,16 +2994,6 @@ textarea {
                     textarea {
                         opacity: 1;
                         filter:alpha(opacity=100);
-                    }
-                }
-
-                &.active {
-                    input[type=text],
-                    textarea {
-                        -webkit-box-shadow: 0px 0px 0px 1px #FF6A13;
-                        -moz-box-shadow:    0px 0px 0px 1px #FF6A13;
-                        box-shadow:         0px 0px 0px 1px #FF6A13;
-                        border-color: #FF6A13;
                     }
                 }
             }
@@ -3032,71 +3025,80 @@ textarea {
         font-weight: 400;
         margin: 98px 0 0 0;
     }
+}
 
-    .feedback-phones {
-        list-style: none;
-        margin: 107px -52px 0 -52px;
-        padding: 0;
+.feedback-phones {
+    list-style: none;
+    margin: 107px 0 0 0;
+    padding: 0;
+    text-align: justify;
+
+    &:after {
+        display: inline-block;
+        width: 100%;
+        content: "";
+    }
+
+    
+    li {
+        width: 310px;
+        height: 170px;
+        margin-bottom: 30px;
+        text-align: left;
+        display: inline-block;
+        vertical-align: top;
         
-        li {
-            float: left;
-            width: 50%;
-            padding: 0 52px;
-            .box-sizing(border-box);
-            margin-bottom: 93px;
-            
-            span {
-                line-height: 29px;
-                vertical-align: top;
-                color: #545454;
-                font-family:'ProximaNova-Bold';
-                font-size: 8pt;
-                text-transform: uppercase;
-                letter-spacing: 1px;
+        span {
+            line-height: 29px;
+            vertical-align: top;
+            color: #545454;
+            font-family:'ProximaNova-Bold';
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
 
-                i {
-                    display: inline-block;
-                    margin: 0px 21px 0 0;
+            i {
+                display: inline-block;
+                margin: 0px 21px 0 0;
 
-                    
-                    &.phone {
-                        background: url("images/feedback-phone.png");
-                        width: 29px;
-                        height: 29px;
-                    }
+                
+                &.phone {
+                    background: url("images/feedback-phone.png");
+                    width: 29px;
+                    height: 29px;
+                }
 
-                    &.fax {
-                        background: url("images/feedback-fax.png");
-                        width: 26px;
-                        height: 28px;
-                    }
+                &.fax {
+                    background: url("images/feedback-fax.png");
+                    width: 26px;
+                    height: 28px;
+                }
 
-                    &.mail {
-                        background: url("images/feedback-mail.png");
-                        width: 32px;
-                        height: 20px;
-                    }
+                &.mail {
+                    background: url("images/feedback-mail.png");
+                    width: 32px;
+                    height: 20px;
                 }
             }
+        }
 
-            p {
-                color: #565656;
-                font-family:'ProximaNova-Bold';
-                font-size: 20pt;
-                margin: 16px 0 0 0;
-                padding-bottom: 13px;
-                border-bottom: 1px solid #d0d0d0;
-                
-                
-                &:hover {
-                    border-bottom: 1px solid #ff6f1c;
-                    color: #ff6f1c;
-                }
+        p {
+            color: #565656;
+            font-family:'ProximaNova-Bold';
+            font-size: 20pt;
+            margin: 16px 0 0 0;
+            padding-bottom: 13px;
+            border-bottom: 1px solid #d0d0d0;
+            
+            
+            &:hover {
+                border-bottom: 1px solid #ff6f1c;
+                color: #ff6f1c;
+            }
 
-                &.address {
-                    font-size: 14pt;
-                    padding-bottom: 6px;
-                }
+            &.address {
+                font-size: 14pt;
+                padding-bottom: 6px;
             }
         }
     }
@@ -3211,6 +3213,12 @@ textarea {
 }
 
 @media (max-width:1200px)  {
+
+.feedback-phones {    
+    li {
+        width: 275px;
+    }
+}
 
     .content-wrap {
         .category-list {
