@@ -132,12 +132,20 @@ $(document).ready(function(){
 	});
 
 	function item_number(el) {
-		// var num = $(this).find('.item').data('item');
-		var num = this.currentItem;
-		console.log(num);
+		var current = this.owl.currentItem + 1,
+			owlItems = this.owl.owlItems.length;
 
-
+		$(this.owl.baseElement).parents('.carosel-block').find('.number').text(parseInt(current) + "/" + parseInt(owlItems));
 	}
+
+	// event-toggle
+
+	$('.arrow-event-toggle').click(function(e){
+		e.preventDefault();
+
+		$(this).toggleClass('active');
+		$(this).siblings('.dropdown').slideToggle();
+	});
 });
 
 $(window).resize(function(){

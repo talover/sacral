@@ -662,7 +662,6 @@ textarea {
 
                 a {
                     color: #ff6b15;
-                    font-family:'ProximaNova-Regular';
                 }
             }
             
@@ -671,7 +670,6 @@ textarea {
                 text-transform: uppercase;
                 text-decoration: none;
                 color: #fff;
-                font-family: "ProximaNova-Light";
                 letter-spacing: .06em;
                 display: block;
                 outline: none;
@@ -1959,7 +1957,7 @@ textarea {
     }
 }//.banner-block
 
-// .without-shadow {background: none;}
+.without-shadow {background: none;}
 
 .item-wrap {
     padding:  55px 0 0 0;
@@ -2574,7 +2572,7 @@ textarea {
             margin: 10px 0 0 20px;
         }
 
-        .form-row {
+        .input-block {
             width: 100%;
             position: relative;
             
@@ -2654,7 +2652,7 @@ textarea {
                 display: block;
             }
 
-            .form-row {
+            .input-block {
                 
                 input[type=text],
                 input[type=password] {
@@ -2667,6 +2665,7 @@ textarea {
 
                 .login {
                     background: url("images/login-red.png");
+                    opacity: 1;
                 }
 
                 .pass {
@@ -2845,6 +2844,10 @@ textarea {
             }
         }
 
+        .dropdown {
+            display: none;
+        }
+
         .events-caption {
             float: left;
             width: 78%;
@@ -2866,18 +2869,28 @@ textarea {
                 margin: 21px 0 0 0;
                 line-height: 24px
             }
+        }
+    }
 
-            .arrow {
-                position: absolute;
-                top: 53px;
-                right: 15px;
-                display: block;
-                background: url("images/arrow-down.png");
-                width: 23px;
-                height: 15px;
-                opacity: 0.5;
-                filter:alpha(opacity=50);
-            }
+    .arrow-event-toggle {
+        position: absolute;
+        top: 53px;
+        right: 15px;
+        display: block;
+        background: url("images/arrow-down.png");
+        width: 23px;
+        height: 15px;
+        opacity: 0.5;
+        filter:alpha(opacity=50);
+        .transition(0.3s,opacity);
+
+        &.active {
+            background: url("images/arrow-up.png");
+        }
+
+        &:hover {
+            opacity: 1;
+            filter:alpha(opacity=100);
         }
     }
 }
@@ -3295,10 +3308,11 @@ textarea {
             text-align: justify;
             font-style: normal;
 
-            &>div {
+            & > div {
                 width: 25%;
                 display: inline-block;
                 vertical-align: top;
+                text-align: left;
 
                 h4 {
                     color: #5e5e5e;
@@ -3437,6 +3451,10 @@ textarea {
             font-size: 72px;
         }
     }
+}
+
+.carosel-block {
+
 }
 
 
