@@ -52,6 +52,8 @@ $(document).ready(function(){
 		navigation : true
 	});
 
+	// slider in product
+
 	var sync1 = $("#sync1");
 	var sync2 = $("#sync2");
  
@@ -115,6 +117,27 @@ $(document).ready(function(){
 			sync2.trigger("owl.goTo", num-1)
 		}
 	}
+
+	// page-slider
+
+	$(".page-slider").owlCarousel({
+		slideSpeed: 800,
+		paginationSpeed: 800,
+		rewindSpeed: 800,
+		singleItem: true,
+		autoPlay: 10000,
+		addClassActive: true,
+		navigation : true,
+		afterAction : item_number,
+	});
+
+	function item_number(el) {
+		// var num = $(this).find('.item').data('item');
+		var num = this.currentItem;
+		console.log(num);
+
+
+	}
 });
 
 $(window).resize(function(){
@@ -142,6 +165,8 @@ var changeTab = function(linkContainer, linkTab, tabContainer) {
 		event.preventDefault();
 
 		setTimeout(function(){height_cont()},200);
+
+		initialize();
 	});
 }
 
