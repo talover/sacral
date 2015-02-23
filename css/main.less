@@ -1902,6 +1902,8 @@ textarea {
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
+    padding-left: 90px;
+    .box-sizing(border-box);
 
     .like-share {
         text-align: left;
@@ -1930,9 +1932,17 @@ textarea {
         }
     }
 
+    .img-block {
+        display: inline-block;
+        vertical-align: top;
+        margin: 73px 30px 0 0;
+    }
+
     .text-block {
-        padding: 90px 0 0 93px;
+        padding: 90px 0 0 0;
         .box-sizing(box-sizing);
+        display: inline-block;
+        vertical-align: top;
 
         h3 {
             font-family: 'ProximaNova-Black';
@@ -3108,6 +3118,19 @@ textarea {
     word-spacing: 1px;
 }
 
+.what-we-sell {
+    padding: 40px 0 0 95px;
+    .box-sizing(border-box);
+
+    .f-left {
+        width: 60%;
+    }
+
+    .f-right {
+        width: 40%;
+    }
+}
+
 
 // responsive 
 
@@ -3218,11 +3241,11 @@ textarea {
 
 @media (max-width:1200px)  {
 
-.feedback-phones {    
-    li {
-        width: 275px;
+    .feedback-phones {    
+        li {
+            width: 275px;
+        }
     }
-}
 
     .content-wrap {
         .category-list {
