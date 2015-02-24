@@ -135,7 +135,7 @@ $(document).ready(function(){
 		var current = this.owl.currentItem + 1,
 			owlItems = this.owl.owlItems.length;
 
-		$(this.owl.baseElement).parents('.carosel-block').find('.number').text(parseInt(current) + "/" + parseInt(owlItems));
+		$(this.owl.baseElement).parents('.carosel-block').find('.number').text(parseInt(current) + " / " + parseInt(owlItems));
 	}
 
 	// event-toggle
