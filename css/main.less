@@ -190,11 +190,6 @@ textarea {
     display: block;
 }
 
-.sprite-1 {
-    width: 64px;
-    height: 83px;
-    background-position: -3px -3px;
-}
 
 .sprite-10 {
     width: 6px;
@@ -449,8 +444,11 @@ textarea {
     border-top: 3px solid #ff6b15;
     
     .logo {
-        .sprite;
-        .sprite-1;
+        background-image: url(images/logo.png);
+        background-repeat: no-repeat;
+        display: block;
+        width: 64px;
+        height: 83px;
         margin-top: 13px;
         float: left;
     }
@@ -577,14 +575,17 @@ textarea {
                 .jq-selectbox__trigger {
                     border-left: 1px solid #fe782c;
                     width: 24px;
+                    text-align: center;
+                    color: rgba(255, 255, 255, 0.5);
+                    line-height: 40px;
+
+                    &:before {
+                        content: "\f3d0";
+                        .ico-style;
+                    }
                     
                     .jq-selectbox__trigger-arrow {
-                        border: none;
-                        opacity: 1;
-                        .sprite;
-                        .sprite-4;
-                        top: 17px;
-                        right: 8px;
+                        display: none;
                     }
                 }
                 
@@ -4175,7 +4176,9 @@ textarea {
         }
     }
 
-    th {font-weight: normal;}
+    th {
+        font-weight: normal;
+    }
 
     td , th {
         border-left:1px solid #eeeded;
@@ -4247,6 +4250,18 @@ textarea {
     .col {
         position: relative;
         .box-sizing(border-box);
+
+        &:after {
+            position: absolute;
+            top: -4px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #ff6b15;
+            content: "";
+            opacity: 0;
+            filter:alpha(opacity=0);
+        }
 
         .name {
             height: 70px;
@@ -4395,6 +4410,23 @@ textarea {
             color: #8c8c8c;
             line-height: 1.7;
             display: none;
+        }
+    }
+}
+
+.col-hover {
+    .transition(0.3s,background);
+    background: transparent;
+    cursor: pointer;
+
+    &.active {
+        background: #fff;
+
+        .col {
+            &:after {
+                opacity: 1;
+                filter:alpha(opacity=100);
+            }
         }
     }
 }

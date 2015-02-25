@@ -158,6 +158,18 @@ $(document).ready(function(){
 			.find('.dropdown').slideUp();
 	});
 
+	$('.subscriptions .col-hover').mouseenter(function(){
+		var col = $(this).data('col');
+
+		$('.subscriptions').find(col).addClass('active');
+	});
+
+	$('.subscriptions .col-hover').mouseleave(function(){
+		var col = $(this).data('col');
+		
+		$('.subscriptions').find(col).removeClass('active');
+	});
+
 });
 
 $(window).resize(function(){
