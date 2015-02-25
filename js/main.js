@@ -146,6 +146,18 @@ $(document).ready(function(){
 		$(this).toggleClass('active');
 		$(this).siblings('.dropdown').slideToggle();
 	});
+
+	// subscriptions-acardion 
+
+
+	$('.subscriptions .acardion h4').click(function(){ 
+		$(this)
+			.siblings('.dropdown').slideToggle()
+			.parents('.acardion').toggleClass('active')
+			.parents('tr').siblings().find('.acardion').removeClass('active')
+			.find('.dropdown').slideUp();
+	});
+
 });
 
 $(window).resize(function(){
