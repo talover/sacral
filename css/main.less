@@ -178,97 +178,6 @@ textarea {
     min-height: 100%;
 }
 
-.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
-    background-position: @x @y;
-    width: @width;
-    height: @height;
-}
-
-.sprite {
-    background-image: url(images/spritesheet.png);
-    background-repeat: no-repeat;
-    display: block;
-}
-
-
-.sprite-10 {
-    width: 6px;
-    height: 10px;
-    background-position: -73px -3px;
-}
-
-.sprite-11 {
-    width: 12px;
-    height: 36px;
-    background-position: -85px -3px;
-}
-
-.sprite-12 {
-    width: 18px;
-    height: 36px;
-    background-position: -103px -3px;
-}
-
-.sprite-13 {
-    width: 19px;
-    height: 36px;
-    background-position: -73px -45px;
-}
-
-.sprite-14 {
-    width: 19px;
-    height: 36px;
-    background-position: -98px -45px;
-}
-
-.sprite-2 {
-    width: 12px;
-    height: 13px;
-    background-position: -73px -87px;
-}
-
-.sprite-3 {
-    width: 16px;
-    height: 11px;
-    background-position: -91px -87px;
-}
-
-.sprite-4 {
-    width: 9px;
-    height: 5px;
-    background-position: -113px -87px;
-}
-
-.sprite-5 {
-    width: 9px;
-    height: 5px;
-    background-position: -3px -98px;
-}
-
-.sprite-6 {
-    width: 18px;
-    height: 32px;
-    background-position: -127px -3px;
-}
-
-.sprite-7 {
-    width: 18px;
-    height: 32px;
-    background-position: -127px -41px;
-}
-
-.sprite-8 {
-    width: 52px;
-    height: 52px;
-    background-position: -91px -104px;
-}
-
-.sprite-9 {
-    width: 21px;
-    height: 36px;
-    background-position: -151px -3px;
-}
-
 .ico-style {
     display: inline-block;
     font-family: "Ionicons";
@@ -367,22 +276,41 @@ textarea {
         .owl-buttons {
             
             div {
-                text-indent: -9999999px;
+      
                 overflow: hidden;
                 position: absolute;
                 bottom: -71px;
                 z-index: 10;
+                color: #1F1F1F;
+                width: 18px;
+                height: 32px;
+                font-size: 30pt;
+                text-align: center;
+                line-height: 32px;
+                .transition(0.5s,all);
+
+                &:hover {color: #666;}
+
+                &:after {
+                    .ico-style;                
+                    width: 18px;
+                    height: 32px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: #f4f4f4;
+                }
 
                 &.owl-prev {
-                    .sprite;
-                    .sprite-6;
                     left: 111px;
+                    
+                    &:after {content: "\f3cf";}
                 }
 
                 &.owl-next {
-                    .sprite;
-                    .sprite-7;
                     right: 116px;
+
+                    &:after {content: "\f3d1";}
                 }
             }
         }
@@ -487,10 +415,15 @@ textarea {
             width: 42px;
 
             i {
-                .sprite;
-                .sprite-2;
+                color: #fff;
                 display: block;
                 margin: 0px auto;
+                font-size: 14pt;
+
+                &:before {
+                    .ico-style;
+                    content: "\f21f";
+                }
             }
         }
     }
@@ -552,11 +485,6 @@ textarea {
 
             }
 
-            .eng {
-                .sprite;
-                .sprite-3;
-            }
-
             .jq-selectbox__dropdown {
                 border: 1px solid #fe782c;
                 background: url("images/selectback.png");
@@ -599,16 +527,18 @@ textarea {
     }
 
     .button-orange {
-        padding: 0 50px;
         margin: 0px 48px 0 0;
         font-size: 13px;
         letter-spacing: 1px;
         max-width: 222px;
         line-height: 45px;
         height: 42px;
+        width: 220px;
+        text-align: center;
         outline:none;
         display: inline-block;
         vertical-align: top;
+        padding: 0;
     }
 
     .log-in {
@@ -737,11 +667,7 @@ textarea {
 
         .arrow {
             border-color: #F9DDCD;
-
-            span {
-                background-image: url(images/arr-hover.png);
-                background-position: 0 0;
-            }
+            color: #ff6b15;
         }
 
         .mini-cart {
@@ -801,16 +727,13 @@ textarea {
         right: 0;
         height: 100%;
         .transition(0.5s,all);
+        text-align: center;
+        line-height: 40px;
+        color: rgba(255, 255, 255, 0.5);
 
-        span {
-            .sprite;
-            .sprite-5;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            left: 0;
-            right: 3px;
+        &:before {
+            .ico-style;
+            content: "\f3d0";
         }
     }
 }
@@ -1005,14 +928,14 @@ textarea {
             }
         }
 
-        #mc_btn {
+        .button-orange {
             height: auto;
             margin: 0;
             float: none;
             display: block;
-            padding: 7px 0 5px;
             text-align: center;
             max-width: 100%;
+            width: 100%;
             font-family: 'ProximaNova-Regular';
             font-size: 14px;
             letter-spacing: normal;
@@ -1553,11 +1476,15 @@ textarea {
         .transition(0.5s,all);
 
         i {
-            .sprite;
-            .sprite-10;
             display: inline-block;
             vertical-align: middle;
             margin-right: 6px;
+            color: #ccc;
+
+            &:before {
+                .ico-style;
+                content: "\f456";
+            }
         }
     }
 }
@@ -1649,23 +1576,26 @@ textarea {
     padding: 50px 0;
     
     .footer-logo {
-        margin: 1% 0 1% 0;
+        margin: 10px 0 10px 0;
         
         
         a {
             text-decoration: none;
-            .sprite;
-            .sprite-8;
+            background: url(images/logo-footer.png);
+            width: 52px;
+            height: 52px;
             display: inline-block;
-            margin-right: 1.2%;
+            vertical-align: top;
+            margin-right: 15px;
+            margin-top: 10px;
         }
 
         span {
             color: #ababab;
             font-size: 18px;
-            vertical-align: top;
             padding-top: 20px;
             display: inline-block;
+            vertical-align: top;
         }
     }
 }/*END footer*/
@@ -1699,27 +1629,47 @@ textarea {
         
         a {
             text-decoration: none;
-            .sprite;
+            color: #AEAEAE;
+            font-size: 18pt;
+            .transition(0.5s,all);
+
+            &:before {
+                .ico-style;
+            }
+
+            &:hover {
+                color: #FF7C0F;
+            }
         }
 
         .facebook {
-            .sprite-11;
+            &:before {
+                content: "\f231";
+            }
         }
 
         .twit {
-            .sprite-12;
+            &:before {
+                content: "\f243";
+            }
         }
 
         .googl {
-            .sprite-13;
+            &:before {
+                content: "\f234";
+            }
         }
 
         .instagram {
-            .sprite-14;
+            &:before {
+                content: "\f351";
+            }
         }
 
         .youtube {
-            .sprite-9;
+            &:before {
+                content: "\f24d";
+            }
         }
     }
 }/*END social*/
@@ -4779,7 +4729,7 @@ textarea {
 
     .header-content {
         .button-orange {
-            padding: 0 25px;
+            width: 180px;
         }
     }
 
@@ -4963,7 +4913,7 @@ textarea {
         }
 
         .button-orange {
-            padding: 0 20px;
+            width: 160px;
             margin: 0px 20px 0 0;
         }
 
@@ -5006,7 +4956,7 @@ textarea {
                 margin-right: 5px;
 
                 a {
-                    font-size: 8.5pt;
+                    font-size: 8pt;
                 }
             }
         }
